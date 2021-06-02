@@ -4,11 +4,9 @@
            imageHeight: 65
         }
   $.fn.makeSlide=function(params){
-      alert("makeSlide is working");
       params=$.extend({},$.fn.imageParams,params);
       var width=(params.imageWidth/100)*screen.availWidth;
       var height=(params.imageHeight/100)*screen.availHeight;
-      alert("makeSlideIsWorking");
       $(this).width(width).height(height);
       $(this).css("margin-top","20px");
       $(this).find("img").hide().width(width).height(height).css("border-radius","10%");

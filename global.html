@@ -8,25 +8,19 @@
 	<script src="jquery_ui.js"></script>
 	<script src="jquery_innerfade.js"></script>
 	<script src="jquery.scrollTo.js"></script>
-	<script src="jquery_correctPositions.js"></script>
-	<script src="jquery_foranimationwidgets.js"></script>
-	<script src="jquery_googlemaps.js"></script>
-	<script src="jquery_inputImage.js"></script>
-	<script src="jquerytablesbody.js"></script>
 	<script src="cycle_plugin.js"></script>
 	<script src="jquery_scrollingImages.js"></script>
 	<script src="jquery_positionMaker.js"></script>
-        <script src="jquery_makeSize.js"></script>
+    <script src="jquery_makeSize.js"></script>
 	<script src="jquery_makeSlide.js"></script>
 	<script>
 		$(document).ready(function(){
-			alert("all is ok");
 			$("#for_scrolling").scrollImages();
 			$("footer").putSize({"width": 100,
                                             "height": 30});
 
 			$("header#right").putSize({"width":30,
-                                                   "height":100});
+                                       "height":"auto"});
 	
 			$("#for_sliding").makeSlide();
 			$("#show_all").on("click",function(){
@@ -35,20 +29,30 @@
 
 			$("#header_div").putSize({"width":100,
 						  "height":10});
-
+			$("#others img").putSize({"width":33,
+									  "height":50})
 			$("#show_all").width(screen.height/5).height(screen.availHeight/5);
 		});
 	</script>
 	<style>
 		 
-
+		 img{
+ 			width:  200px;
+ 			height: auto;
+ 			background-image: url("for_image.jpg");
+ 			background-attachment: fixed;
+ 			background-origin: content-box;
+ 			background-position: auto auto;
+ 			background-size: 100% auto;
+		}
 		body{
 			text-align: center;
-			background-image: url("for_background2.jpg");
+			background-image: url("for_background3.jpg");
                         background-attachment: fixed;
                         background-position: center center;
                         background-size: 100% auto;
 			font-family: cursive;
+			background-repeat: no-repeat;
 		}
 
 		figure#for_main_image{ 
@@ -102,6 +106,11 @@
 			border-radius: 20px;  
 		}
 
+		header#right p{
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
 		#show_all{
 			transition-property: all;
 			animation-name: changeScale;
@@ -131,11 +140,11 @@
 	<h1 style="opacity: 0.8;text-align:center; color: yellow;">Зодрӯз муборак!!!</h1>
 	</div>
 	<figure id="for_main_image">
-		<img src="image (1).jpg">
+		<img src="main_image.jpg">
 	</figure>
 	
 	<div id="main">
-	<header style="color: yellow;" id="right">
+	<header style="color: yellow;font-size: large;" id="right">
 		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
 			Поздравляем с днём рождения! Желаем вам прекрасной жизни, и пусть на каждом
 			её повороте всегда встречаются замечательные события. Желаем массу поводов для
@@ -150,7 +159,10 @@
 			You’re the most amazing, beautiful and strongest person. We are really proud.Enjoy your special day. Happy birthday!
 		</p>
 		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
-			Ниҳоли қоматат пурбор гардад,<br>
+			Зодрӯзи шумо бӯи баҳор оварда,<br>
+			Пайғоми фараҳ ба рӯзгор оварда.<br>
+			Хоҳем, ки шуморо ҳамеша бинем,<br>
+			Дар хонаи шумо файзи фаровон бинем.<br>
 		</p>
 	</header>
 	<div id="for_scrolling">
@@ -160,16 +172,25 @@
 			<img src="image (3).jpg">
 			<img src="image (4).jpg">
 			<img src="image (5).jpg">
-			
+			<img src="image (6).jpg">
+			<img src="image (7).jpg">
+			<img src="image (8).jpg">
+			<img src="image (9).jpg">
+			<img src="image (10).jpg">		
 		</div>
 	</div><br>
 
 	<div id="for_sliding">
-		<img src="image (1).jpg">
-		<img src="image (2).jpg">
-		<img src="image (3).jpg">
-		<img src="image (4).jpg">
-		<img src="image (5).jpg">
+		<img src="image (11).jpg">
+		<img src="image (12).jpg">
+		<img src="image (13).jpg">
+		<img src="image (14).jpg">
+		<img src="image (15).jpg">
+		<img src="image (16).jpg">
+		<img src="image (17).jpg">
+		<img src="image (18).jpg">
+		<img src="image (19).jpg">
+		<img src="image (20).jpg">
 	</div>
 	
 	</div><br>
@@ -177,12 +198,37 @@
 	<img id="birthday_image1" src="birthday_image1.jpg"/>
 	<img id="show_all" src="show_all.jpg"/>
 
-	<div id="others" style="display: none;">
-		<img src="image (1).jpg">
-		<img src="image (2).jpg">
-		<img src="image (3).jpg">
-		<img src="image (4).jpg">
-		<img src="image (5).jpg">
+	<div id="others" width="100%" height="1000%" style="display: none;">
+		<img src="image (21).jpg">
+		<img src="image (22).jpg">
+		<img src="image (23).jpg">
+		<img src="image (24).jpg">
+		<img src="image (25).jpg">
+		<img src="image (26).jpg">
+		<img src="image (27).jpg">
+		<img src="image (28).jpg">
+		<img src="image (29).jpg">
+		<img src="image (30).jpg">
+		<img src="image (31).jpg">
+		<img src="image (32).jpg">
+		<img src="image (33).jpg">
+		<img src="image (34).jpg">
+		<img src="image (35).jpg">
+		<img src="image (36).jpg">
+		<img src="image (37).jpg">
+		<img src="image (38).jpg">
+		<img src="image (39).jpg">
+		<img src="image (40).jpg">
+		<img src="image (41).jpg">
+		<img src="image (42).jpg">
+		<img src="image (43).jpg">
+		<img src="image (44).jpg">
+		<img src="image (45).jpg">
+		<img src="image (46).jpg">
+		<img src="image (47).jpg">
+		<img src="image (48).jpg">
+		<img src="image (49).jpg">
+		<img src="image (50).jgp">
 	</div>
 	<footer>
 		<p style="font-size: 500%;">Happy Birthday<img style="display: inline;width: 100px; height: 100px; border-radius: 100px;" src="flowers.jpg"/>!!!</p>
