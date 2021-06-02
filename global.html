@@ -15,36 +15,45 @@
 	<script src="jquery_makeSlide.js"></script>
 	<script>
 		$(document).ready(function(){
-			$("#for_scrolling").scrollImages();
 			$("footer").putSize({"width": 100,
                                             "height": 30});
 
-			$("header#right").putSize({"width":30,
+			$("header#right").putSize({"width":100,
                                        "height":"auto"});
 	
-			$("#for_sliding").makeSlide();
-			$("#show_all").on("click",function(){
-				$("#others").slideToggle("slow");
-			});
 
 			$("#header_div").putSize({"width":100,
 						  "height":10});
-			$("#others img").putSize({"width":33,
-									  "height":50})
+			$("#others img").putSize({"width": "auto",
+						  "height": 50})
 			$("#show_all").width(screen.height/5).height(screen.availHeight/5);
 		});
 	</script>
 	<style>
+		
 		 
 		 img{
- 			width:  200px;
- 			height: auto;
+ 			width: auto;
+ 			height: 50%;
+			border-radius: 30%;
  			background-image: url("for_image.jpg");
  			background-attachment: fixed;
  			background-origin: content-box;
  			background-position: auto auto;
  			background-size: 100% auto;
+			display: inline;
+			border: 100px;
+			transition-property: all;
+			transition-duration: 2s;
 		}
+
+		img:hover{
+			transform: scale(1.2);
+			transition-duration: 2s;
+			transition-property: all;
+		}
+	
+		
 		body{
 			text-align: center;
 			background-image: url("for_background3.jpg");
@@ -103,12 +112,17 @@
 			float: right;
 			background-color: black;
 			opacity: 0.5;
-			border-radius: 20px;  
+			border-radius: 20px; 
+		        min-width: 200px;
+                        max-height: 100%;
+			overflow: hidden;
+			overflow-y: scroll;
 		}
 
 		header#right p{
 			margin-top: 30px;
 			margin-bottom: 30px;
+			font-size: normal;
 		}
 
 		#show_all{
