@@ -6,41 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
 	<script src="jquery-3.5.1.min.js"></script>
 	<script src="jquery_ui.js"></script>
-	<script src="jquery_innerfade.js"></script>
-	<script src="jquery.scrollTo.js"></script>
-	<script src="cycle_plugin.js"></script>
-	<script src="jquery_scrollingImages.js"></script>
-	<script src="jquery_positionMaker.js"></script>
-        <script src="jquery_makeSize.js"></script>
-	<script src="jquery_makeSlide.js"></script>
 	<script>
 		$(document).ready(function(){
-			$("footer").putSize({"width": 100,
-                                            "height": 30});
 
-			$("header#right").putSize({"width":100,
-                                       "height":"auto"});
-	
-
-			$("#header_div").putSize({"width":100,
-						  "height":10});
-			$("#others img").putSize({"width": "auto",
-						  "height": 50})
-			
-			$(window).on("change",function(){
-				$("footer").putSize({"width": 100,
-                                            "height": 30});
-
-			$("header#right").putSize({"width":100,
-                                       "height":"auto"});
-	
-
-			$("#header_div").putSize({"width":100,
-						  "height":10});
-			$("#others img").putSize({"width": "auto",
-						  "height": 50})
-			
-			});
 			$("#show_all").width(screen.height/5).height(screen.availHeight/5);
 		});
 	</script>
@@ -172,8 +140,8 @@
 		<img src="main_image.jpg">
 	</figure>
 	
-	<div id="main">
-	<header style="color: yellow;font-size: large;" id="right">
+	<div id="main" style="width: 100%;">
+	<header style="width: 100%;color: yellow;font-size: large;" id="right">
 		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
 			Поздравляем с днём рождения! Желаем вам прекрасной жизни, и пусть на каждом
 			её повороте всегда встречаются замечательные события. Желаем массу поводов для
@@ -194,6 +162,7 @@
 			Дар хонаи шумо файзи фаровон бинем.<br>
 		</p>
 	</header>
+	</div>
 	<div>
 			<img src="image (1).jpg">
 			<img src="image (2).jpg">
@@ -234,7 +203,7 @@
 	</div>
 	
 	<img id="birthday_image1" src="birthday_image1.jpg"/>
-	<img id="show_all" src="show_all.jpg"/>
+	<img id="show_all" style="width: 20%; height: 20%;" src="show_all.jpg"/>
 
 	<footer>
 		<p style="font-size: 500%;">Happy Birthday<img style="display: inline;width: 100px; height: 100px; border-radius: 100px;" src="flowers.jpg"/>!!!</p>
