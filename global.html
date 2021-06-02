@@ -1,0 +1,192 @@
+﻿<!doctype html>
+<head>
+	<title>Happy Birthday</title>
+	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="jquery_ui.js"></script>
+	<script src="jquery_innerfade.js"></script>
+	<script src="jquery.scrollTo.js"></script>
+	<script src="jquery_correctPositions.js"></script>
+	<script src="jquery_foranimationwidgets.js"></script>
+	<script src="jquery_googlemaps.js"></script>
+	<script src="jquery_inputImage.js"></script>
+	<script src="jquerytablesbody.js"></script>
+	<script src="cycle_plugin.js"></script>
+	<script src="jquery_scrollingImages.js"></script>
+	<script src="jquery_positionMaker.js"></script>
+        <script src="jquery_makeSize.js"></script>
+	<script src="jquery_makeSlide.js"></script>
+	<script>
+		$(document).ready(function(){
+			alert("all is ok");
+			$("#for_scrolling").scrollImages();
+			$("footer").putSize({"width": 100,
+                                            "height": 30});
+
+			$("header#right").putSize({"width":30,
+                                                   "height":100});
+	
+			$("#for_sliding").makeSlide();
+			$("#show_all").on("click",function(){
+				$("#others").slideToggle("slow");
+			});
+
+			$("#header_div").putSize({"width":100,
+						  "height":10});
+
+			$("#show_all").width(screen.height/5).height(screen.availHeight/5);
+		});
+	</script>
+	<style>
+		 
+
+		body{
+			text-align: center;
+			background-image: url("for_background2.jpg");
+                        background-attachment: fixed;
+                        background-position: center center;
+                        background-size: 100% auto;
+			font-family: cursive;
+		}
+
+		figure#for_main_image{ 
+			width: 60%; 
+                        height: auto;
+			overflow: hidden;
+			border-radius: 1000px;
+			background-origin: content-box; 
+                        background-clip: content-box;
+			display: inline-block; 
+                } 
+
+		
+		figure#for_main_image img{ 
+			width: 100%;
+                        height: auto; 
+                }
+
+		div#for_scrolling{ 
+			display: inline-block;
+		}
+
+		#birthday_image1{
+			position: fixed;
+			top: 0px; 
+                        left: 0px; 
+                        border-radius: 100%; 
+                        width: 20%;
+                        height: 20%;
+		}
+	
+		footer{
+			width: 100%; 
+                        height: 30%;
+			background-color: black;
+			overflow: hidden; 
+			overflow-y: scroll;
+		        color: white;
+                        opacity: 0.8;
+                }
+
+		body{
+			font-style: cursive; 
+		}
+
+		header#right{
+			position: relative;
+			float: right;
+			background-color: black;
+			opacity: 0.5;
+			border-radius: 20px;  
+		}
+
+		#show_all{
+			transition-property: all;
+			animation-name: changeScale;
+			animation-delay: none;
+			animation-iteration-count: infinite;
+			animation-duration: 2s;
+			cursor: pointer;
+			border-radius: 1000px;
+			position: fixed;
+                        right: 20px;
+                        bottom: 0px;
+			z-index: 100;
+		}
+
+		@keyframes changeScale{
+			from{
+			   transform: scale(1);
+			}50%{
+			   transform: scale(1.2);
+			}to{
+			   transform: scale(1); 
+			}
+		}
+	</style>
+<body>
+	<div  id="header_div"style="background-color: black; width: 100%; opacity: 0.7;">
+	<h1 style="opacity: 0.8;text-align:center; color: yellow;">Зодрӯз муборак!!!</h1>
+	</div>
+	<figure id="for_main_image">
+		<img src="image (1).jpg">
+	</figure>
+	
+	<div id="main">
+	<header style="color: yellow;" id="right">
+		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
+			Поздравляем с днём рождения! Желаем вам прекрасной жизни, и пусть на каждом
+			её повороте всегда встречаются замечательные события. Желаем массу поводов для
+                        радости и здоровья крепкого! Пусть каждое утро будет счастливым и солнечным! И пусть
+                        жизнь будет долгой и гладкой, полной ярких и запоминающих событий!Мы желаем, чтобы мечты 
+                        всегда сбывались, чтобы радостные, приятные моменты присутствовали в вашей жизни
+                        каждый день, чтобы друзья были только надёжные, готовые всегда помочь и разделить
+                        радость.С днём рождения!!!
+		</p>
+		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
+			Sending you best wishes for success, health, and good fortune in your life. 
+			You’re the most amazing, beautiful and strongest person. We are really proud.Enjoy your special day. Happy birthday!
+		</p>
+		<p style="border-bottom: 2px solid yellow;border-top: 2px solid yellow;">
+			Ниҳоли қоматат пурбор гардад,<br>
+		</p>
+	</header>
+	<div id="for_scrolling">
+		<div id="for_scrolling_inner_div">
+			<img src="image (1).jpg">
+			<img src="image (2).jpg">
+			<img src="image (3).jpg">
+			<img src="image (4).jpg">
+			<img src="image (5).jpg">
+			
+		</div>
+	</div><br>
+
+	<div id="for_sliding">
+		<img src="image (1).jpg">
+		<img src="image (2).jpg">
+		<img src="image (3).jpg">
+		<img src="image (4).jpg">
+		<img src="image (5).jpg">
+	</div>
+	
+	</div><br>
+
+	<img id="birthday_image1" src="birthday_image1.jpg"/>
+	<img id="show_all" src="show_all.jpg"/>
+
+	<div id="others" style="display: none;">
+		<img src="image (1).jpg">
+		<img src="image (2).jpg">
+		<img src="image (3).jpg">
+		<img src="image (4).jpg">
+		<img src="image (5).jpg">
+	</div>
+	<footer>
+		<p style="font-size: 500%;">Happy Birthday<img style="display: inline;width: 100px; height: 100px; border-radius: 100px;" src="flowers.jpg"/>!!!</p>
+		<p style="color: yellow; float: right;">From family</p>
+	</footer>
+</body>
+</html>
