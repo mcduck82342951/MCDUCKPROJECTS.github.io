@@ -1,0 +1,283 @@
+<!doctype html>
+<head>
+	<title>Happy family</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="jquery_ui.js"></script>
+	<script src="jquery.scrollTo.js"></script>
+	<script src="jquery_correctPositions.js"></script>
+	<script src="jquery_foranimationwidgets.js"></script>
+	<script src="jquery_innerfade.js"></script>
+	<script src="jquery_inputImage.js"></script>
+	<script src="jquery_makeSize.js"></script>
+	<script src="jquery_makeSlide.js"></script>
+	<script src="jquery_positionMaker.js"></script>
+	<script src="jquery_scrollingImages.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("div").children("img").each(function(){
+				var image=this;
+				var container=$(image).parent("div");
+ 				var figure=document.createElement("figure");
+				$(image).remove();
+				$(image).appendTo(figure);
+				$(figure).appendTo(container);
+			});
+			$("#outer_div").scrollImages({"imageWidth":  screen.availWidth-10,
+						      "imageHeight": screen.availHeight-10,
+                                                      "outerContainerWidth": screen.availWidth-10,
+                                                      "outerContainerHeight": screen.availHeight-10,
+                                                      "innerContainerWidth": screen.availWidth*2,
+                                                      "innerContainerHeight": screen.availHeigh*3});
+
+			$("#for_slide").makeSlide({"imageWidth": screen.availWidth-10,
+						   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event":"interval", 
+                                                   "type":"slideBlind"});
+
+			$("#for_slide2").makeSlide({"imageWidth": screen.availWidth-10,
+						   "imageHeight": screen.availHeight-10,				
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+ 						   "event":"click",
+						   "type": "slideSlide"});
+
+			$("#for_slide3").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight":  screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event": "click",
+						   "type": "shakeSlide"});
+
+			$("#for_slide4").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event": "click", 
+						   "type": "shakePuff"});
+
+			$("#for_slide5").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event": "click",
+						   "type": "puffShake"});
+
+			$("#for_slide6").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event":"click",
+						   "type": "blindSlide"});
+
+			$("#for_slide7").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "event": "click",
+                                                   "type": "slideBlind"});
+
+			$("#for_slide8").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+                                                   "type": "foldBlind",
+						   "event": "click"});
+
+			$("#for_slide9").makeSlide({"imageWidth": screen.availWidth-10,
+                                                   "imageHeight": screen.availHeight-10,
+						   "containerWidth": screen.availWidth-10,
+                                                   "containerHeight": screen.availHeight-10,
+						   "type":"foldFold",
+						   "event":"click"});
+
+
+			var number=Math.floor(Math.random()*10);
+		
+			switch(number){
+				case 1: console.log("hello");
+				case 2: console.log("friend");
+				case 3: console.log("home");
+				case 4: console.log("mountains");
+				case 5: console.log("sky");
+				default: console.log("classroom");	
+			}
+
+		});
+
+			
+	</script>
+
+	<style>
+		body{
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			background-attachment: fixed;
+                        background-image: url("for_image.jpg"); 
+			background-origin: content-box;
+                        background-clip: content-box; 
+                        background-size: 100% auto; 
+                        background-position: center center;
+                        background-repeat: no-repeat;
+			font-family: cursize;
+		}
+
+		figure{
+			background-attachment: fixed;
+                        background-image: url("for_image.jpg"); 
+			background-origin: content-box;
+                        background-clip: content-box; 
+                        background-size: 100% auto; 
+                        background-position: center center;
+                        background-repeat: no-repeat;
+			text-align: center;
+			overflow: hidden;
+                }		
+	</style>
+</head>
+<body>
+	<header style="width: 100%; heihgt: 100%; text-align;center;background-color: black; opacity: 0.5;color: white; font-size: xx-large;">
+			Mickey Mouse
+	</header>
+
+	<div id="outer_div" style="display: inline-block; overflow: hidden;">
+	   <div id="inner_div">
+		<img src="image (1).jpg">
+		<img src="image (2).jpg">
+		<img src="image (3).jpg">
+		<img src="image (4).jpg">
+		<img src="image (5).jpg">
+		<img src="image (6).jpg">	
+		<img src="image (7).jpg">
+		<img src="image (8).jpg">
+		<img src="image (9).jpg">
+		<img src="image (10).jpg">
+	   </div>
+	</div>
+
+	<div id="for_slide" style="display: inline-block; overflow:hidden;">
+		<img src="image (11).jpg">
+		<img src="image (12).jpg">
+		<img src="image (13).jpg">
+		<img src="image (14).jpg">
+		<img src="image (15).jpg">
+		<img src="image (16).jpg">
+		<img src="image (17).jpg">
+		<img src="image (18).jpg">
+		<img src="image (19).jpg">
+		<img src="image (20).jpg">
+	</div>
+
+	<div id="for_slide2" style="display: inline-block; overflow: hidden;">
+		<img src="image (21).jpg">
+		<img src="image (22).jpg">
+		<img src="image (23).jpg">
+		<img src="image (24).jpg">
+		<img src="image (25).jpg">
+		<img src="image (26).jpg">
+		<img src="image (27).jpg">
+		<img src="image (28).jpg">
+		<img src="image (29).jpg">
+		<img src="image (30).jpg">	
+	</div>
+	
+	<div id="for_slide3" style="display: inline-block; overflow: hidden;">
+		<img src="image (31).jpg">
+		<img src="image (32).jpg">
+		<img src="image (33).jpg">
+		<img src="image (34).jpg">
+		<img src="image (35).jpg">
+		<img src="image (36).jpg">
+		<img src="image (37).jpg">
+		<img src="image (38).jpg">
+		<img src="image (39).jpg">
+		<img src="image (40).jpg">
+	</div>
+	
+	<div id="for_slide4" style="display: inline-block; overflow: hidden;">
+		<img src="image (41).jpg">
+		<img src="image (42).jpg">
+		<img src="image (43).jpg">
+		<img src="image (44).jpg">
+		<img src="image (45).jpg">
+		<img src="image (46).jpg">
+		<img src="image (47).jpg">
+		<img src="image (48).jpg">
+		<img src="image (49).jpg">
+		<img src="image (50).jpg">
+	</div>
+	
+	<div id="for_slide5" style="display: inline-block; overflow: hidden;">
+		<img src="image (51).jpg">
+		<img src="image (52).jpg">
+		<img src="image (53).jpg">
+		<img src="image (54).jpg">
+		<img src="image (55).jpg">
+		<img src="image (56).jpg">
+		<img src="image (57).jpg">	
+		<img src="image (58).jpg">
+		<img src="image (59).jpg">
+		<img src="image (60).jpg">
+	</div>
+
+
+	<div id="for_slide6" style="display: inline-block; overflow: hidden;">
+		<img src="image (61).jpg">
+		<img src="image (62).jpg">
+		<img src="image (63).jpg">
+		<img src="image (64).jpg">
+		<img src="image (65).jpg">
+		<img src="image (66).jpg">
+		<img src="image (67).jpg">
+		<img src="image (68).jpg">
+		<img src="image (69).jpg">
+		<img src="image (70).jpg">
+	</div>
+
+	<div id="for_slide7" style="display: inline-block; overflow: hidden;">
+		<img src="image (71).jpg">
+		<img src="image (72).jpg">
+		<img src="image (73).jpg">
+		<img src="image (74).jpg">
+		<img src="image (75).jpg">
+		<img src="image (76).jpg">
+		<img src="image (77).jpg">
+		<img src="image (78).jpg">
+		<img src="image (79).jpg">
+		<img src="image (80).jpg">
+	</div>
+	
+	<div id="for_slide8" style="display: inline-block; overflow: hidden;">
+		<img src="image (81).jpg">
+		<img src="image (82).jpg">
+		<img src="image (83).jpg">
+		<img src="image (84).jpg">
+		<img src="image (85).jpg">
+		<img src="image (86).jpg">
+		<img src="image (87).jpg">
+		<img src="image (88).jpg">
+		<img src="image (89).jpg">
+		<img src="image (90).jpg">
+	</div>
+	<div id="for_slide9" style="display: inline-block;overflow: hidden;">
+	 	<img src="image (1).png">
+		<img src="image (2).png">
+		<img src="image (3).png">
+		<img src="image (4).png">
+		<img src="image (5).png">
+		<img src="image (6).png">
+		<img src="image (7).png">
+		<img src="image (8).png">
+		<img src="image (9).png">
+		<img src="image (10).png">
+	</div>	
+	<footer style="width: 100%; height: 200px; text-align: center; background-color: black; opacity: 0.5; color: white; font-size: xx-large;">
+		Created by Mirzobakhtiyor Rahmatov.<span style="color: yellow;"> Mc.Duck & Altron </span>
+	</footer>
+</body>
+</html>
