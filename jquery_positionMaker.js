@@ -1,5 +1,6 @@
 (function($){
      $.fn.center=function(){
+     	alert("The centering function is working");
         var elem=this;
         var container=$(this).parent();
 
