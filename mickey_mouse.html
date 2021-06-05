@@ -17,6 +17,12 @@
 	<script src="jquery_scrollingImages.js"></script>
 	<script>
 		$(document).ready(function(){
+			$("#blog_contents").find("li").hide();
+			$("#site_1").on("mouseover",function(){
+					$("#blog_contents").find("li:nth-child(1)").slideToggle("slow");
+			}).on("mouseout",function(){
+					$("#blog_contents").find("li:nth-child(1)").slideToggle("slow");
+			});
 			$("div").children("img").each(function(){
 				var image=this;
 				var container=$(image).parent("div");
@@ -137,12 +143,40 @@
                         background-repeat: no-repeat;
 			text-align: center;
 			overflow: hidden;
-                }		
+                }
+
+         #blog_panel{
+         	 display: inline;
+         	 list-style-type: none;
+   			 color: white;
+   			 font-size: xx-large;
+         }
+
+         #blog_panel li{
+         	 display: inline;
+         	 border-collapse: collapse;
+         	 border: 2px solid white;
+         }
+
+         #blog_panel li a{
+         	color: white;
+         }
 	</style>
 </head>
 <body>
 	<header style="width: 100%; heihgt: 100%; text-align;center;background-color: black; opacity: 0.5;color: white; font-size: xx-large;">
 			Mickey Mouse
+			<ul id="blog_panel">
+				<li id="site_1"><a href="site_maker_main_page.html">Site-maker</a></li>
+			</ul>
+			<ul id="blog_contents" style="list-style-type: none; font-size: normal;">
+				<li>It's  web-program that helps to create sites and makes creating them just like having fun.
+					It includes main parameters and main objects for creating upper sites. The program can be started by one of three
+					languages that are English, Russian and Tajik.
+					Everyone can make their own site by using it. It's very easy and one doesn't need to learn coding to make their own
+					site. Just try!
+				</li>
+			</ul>
 	</header>
 
 	<div id="outer_div" style="display: inline-block; overflow: hidden;">
