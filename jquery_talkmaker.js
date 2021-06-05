@@ -24,7 +24,7 @@
 				}else{
 					var random=Math.floor(Math.random()*69);
 					var image=document.createElement("img");
-					image.setAttribute("src","images/image ("+random+").jpg");
+					image.setAttribute("src","image ("+random+").jpg");
 					$(image).css({"width":"200px",
 						      "height":"200px",
 						      "display":"inline-block"});
@@ -41,7 +41,7 @@
 
 			$.maketalking=function(stopingButton){
 				var timer=setInterval(function(){ 
-					var random=Math.floor(Math.random()*60);
+					var random=Math.floor(Math.random()*100);
 					$.talk(random);
 				},3000);
 				$(stopingButton).click(function(){
