@@ -57,6 +57,12 @@
      			case "foldBlind": foldBlind(container); break;
      			case "blindFold": blindFold(container); break
       			case "foldFold": foldFold(container); break;
+			case "clipFold": clipFold(container); break;
+    			case "foldClip": foldClip(container); break;
+                        case "clipClip": clipClip(container); break;
+                        case "blindBlind": blindBlind(container); break;
+                        case "blindClip": blindClip(container); break;
+                        case "clipBlind": clipBlind(container); break;
      		}
      	});
      }
@@ -151,7 +157,53 @@
   	$(images[next]).delay(2500).show("fold",2000).addClass("changingObject");
   }
 
-  
+  function clipFold(cont){
+	var images=$(cont).find("figure");
+        $(cont).find("figure.changingObject").hide("clip",2000).removeClass("changingObject");
+	var numOfPics=$("images").length;
+ 	var next=Math.floor(Math.random()*numOfPics);
+        $(images[next]).delay(2500).show("fold",2000).addClass("changingObject");
+  }
 
+  function foldClip(cont){
+	var images=$(cont).find("figure");
+        $(cont).find("figure.changingObject").hide("fold",2000).removeClass("changingObject");
+        var numOfPics=$("images").length;
+        var next=Math.floor(Math.random() *numOfPics);
+        $(images[next]).delay(2500).show("clip",2000).addClass("changingOBject");
+	
+  } 
+
+  function clipClip(cont){
+	var images=$(cont).find("figure");
+	$(cont).find("figure.changingObject").hide("clip",2000).removeClass("changingObject");
+        var numOfPics=$(cont).find("images").length;
+	var next=Math.floor(Math.random() *numOfPics) ;
+        $(images[next]).delay(2500).show("clip",2000).addClass("changingObject");
+  }
+  
+  function blindBlind(cont){
+	var images=$(cont).find("figure");
+        $(cont).find("figure.changingObject").hide("blind",2000).removeClass("changingObject") ;
+        var numOfPics=$(cont).find("images").length;
+        var next=Math.floor(Math.random()*numOfPics);
+        $(images[next]).delay(2500).show("blind",2000).addClass("changingObject"); 
+  }
+
+  function blindClip(cont){
+	var images=$(cont).find("figure");
+        $(cont).find("figure.changingObject").hide("blind",2000).removeClass("changingObject");
+        var numOfPics=$(cont).find("images").length;
+        var next=Math.floor(Math.random()*numOfPics);
+        $(images[next]).delay(2500).show("clip",2000).addClass("changingObject");
+  }
+
+  function clipBlind(cont){
+        var images=$(cont).find("figure");
+        $(cont).find("figure.changingObject").hide("clip",2000).removeClass("changingObject");
+        var numOfPics=$(cont).find("images").length;
+        var next=Math.floor(Math.random()*numOfPics);
+        $(images[next]).delay(2500).show("blind",2000).addClass("changingObject");
+  }
 
 })(jQuery)

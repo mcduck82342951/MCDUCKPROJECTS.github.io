@@ -2,7 +2,6 @@
 <head>
 	<title>Happy family</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
 	<script src="jquery-3.5.1.min.js"></script>
 	<script src="jquery_ui.js"></script>
@@ -101,7 +100,112 @@
 						   "type":"foldFold",
 						   "event":"click"});
 
+			$("#for_slide10").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipFold",
+                                                    "event":"click"});
 
+			$("#for_slide11").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"foldClip",
+                                                    "event":"click"});
+
+
+			$("#for_slide12").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipClip",
+                                                    "event":"click"});
+
+			$("#for_slide13").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"blindBlind",
+                                                    "event":"click"});
+
+			$("#for_slide14").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipBlind",
+                                                    "event":"click"});
+
+			$("#for_slide15").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"blindClip",
+                                                    "event":"click"});
+
+			
+			$("#for_slide16").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"puffClip",
+                                                    "event":"click"});
+
+			$("#for_slide17").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipPuff",
+                                                    "event":"click"});
+
+			$("#for_slide18").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipSlide",
+                                                    "event":"click"});
+
+			$("#for_slide19").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"slideClip",
+                                                    "event":"click"});
+
+
+			$("#for_slide20").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"explodeClip",
+                                                    "event":"click"});
+
+			$("#for_slide21").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"clipExplode",
+                                                    "event":"click"});
+
+			$("#for_slide22").makeSlide({"imageWidth": screen.availWidth-10,
+						    "imageHeight": screen.availHeight-10,
+                                                    "containerWidth": screen.availWidth-10,
+  						    "containerHeight": screen.availHeight-10,
+                                                    "type":"explodeExplode",
+                                                    "event":"click"});
+
+			$("#advertisment ul").innerFade({
+                                          animationType: "slide",
+                                          speed: 750,
+                                          timeout: 3000,
+                                          type: "sorted"});
+
+			$("#advertisment2 ul").innerFade({
+					  animationType: "fade",
+                                          speed: 750,
+                                          timeout: 3000,
+                                          type: "sorted"}); 
+			
 			var number=Math.floor(Math.random()*10);
 		
 			switch(number){
@@ -115,7 +219,7 @@
 
 		});
 
-			
+		
 	</script>
 
 	<style>
@@ -161,11 +265,29 @@
          #blog_panel li a{
          	color: white;
          }
+	
+	#advertisment ul li{
+		background-color: black;
+		border-radius: 20px;
+	}
+
+	#advertisment2 ul{
+		list-style-type: none;
+        }
+
+ 	#advertisment2{	
+		color:  white;	
+		font-size: x-large;
+		position: fixed;
+                top: 0px;
+                left: 0px; 
+        }
+			
 	</style>
 </head>
 <body>
 	<header style="width: 100%; heihgt: 100%; text-align;center;background-color: black; opacity: 0.5;color: white; font-size: xx-large;">
-			<img src="logo.png" style="opacity: 1.5;"/><br>
+			<img src="logo.png"/><br>
 			<span style="color: yellow;">Mickey Mouse</span>
 			<ul id="blog_panel">
 				<li id="site_1"><a href="https://mcduck82342951.github.io/site_maker_main_page.html">Site-maker</a></li>
@@ -310,9 +432,257 @@
 		<img src="image (8).png">
 		<img src="image (9).png">
 		<img src="image (10).png">
-	</div>	
+	</div>
+
+	<div id="for_slide10" style="display: inline-block; overflow: hidden;">
+		<img src="image (91).jpg">
+		<img src="image (92).jpg">
+		<img src="image (93).jpg">
+		<img src="image (94).jpg">
+		<img src="image (95).jpg">
+		<img src="image (96).jpg">
+		<img src="image (97).jpg">
+		<img src="image (98).jpg">
+		<img src="image (99).jpg">
+		<img src="image (100).jpg">
+	</div>
+
+	<div id="for_slide11" style="display: inline-block; overflow: hidden;"> 
+		<img src="image (101).jpg">
+		<img src="image (102).jpg">
+		<img src="image (103).jpg">
+		<img src="image (104).jpg">
+		<img src="image (105).jpg">
+		<img src="image (106).jpg">
+		<img src="image (107).jpg">
+		<img src="image (108).jpg">
+		<img src="image (109).jpg">
+		<img src="image (110).jpg">
+	</div>
+
+	<div id="for_slide12" style="display: inline-block; overflow: hidden;">
+		<img src="image (91).png">
+		<img src="image (92).png">
+		<img src="image (93).png">
+		<img src="image (94).png">
+		<img src="image (95).png">
+		<img src="image (96).png">
+		<img src="image (97).png">
+		<img src="image (98).png">
+		<img src="image (99).png">
+		<img src="image (100).png">
+	</div>
+
+	<div id="for_slide13" style="display: inline-block; overflow: hidden;">
+		<img src="image (111).jpg">
+		<img src="image (112).jpg">
+		<img src="image (113).jpg">
+		<img src="image (114).jpg">
+		<img src="image (115).jpg">
+		<img src="image (116).jpg">
+		<img src="image (117).jpg">
+		<img src="image (118).jpg">
+		<img src="image (119).jpg">
+		<img src="image (120).jpg">
+	</div>
+
+	<div id="for_slide14" style="display: inline-block; overflow: hidden;">
+		<img src="image (121).jpg">
+		<img src="image (122).jpg">
+		<img src="image (123).jpg">
+		<img src="image (124).jpg">
+		<img src="image (125).jpg">
+		<img src="image (126).jpg">
+		<img src="image (127).jpg">
+		<img src="image (128).jpg">
+		<img src="image (129).jpg">
+		<img src="image (130).jpg">
+	</div>
+
+	<div id="for_slide16" style="display: inline-block; overflow: hidden;">
+		<img src="image (141).jpg">
+		<img src="image (142).jpg">
+		<img src="image (143).jpg">
+		<img src="image (144).jpg">
+		<img src="image (145).jpg">
+		<img src="image (146).jpg">
+		<img src="image (147).jpg">
+		<img src="image (148).jpg">
+		<img src="image (149).jpg">
+		<img src="image (150).jpg">
+	</div>
+
+	
+	<div id="for_slide17" style="display: inline-block; overflow: hidden;">
+		<img src="image (151).jpg">
+		<img src="image (152).jpg">
+		<img src="image (153).jpg">
+		<img src="image (154).jpg">
+		<img src="image (155).jpg">
+		<img src="image (156).jpg">
+		<img src="image (157).jpg">
+		<img src="image (158).jpg">
+		<img src="image (159).jpg">
+		<img src="image (150).jpg">
+	</div>
+
+	
+	<div id="for_slide18" style="display: inline-block; overflow: hidden;">
+		<img src="image (161).jpg">
+		<img src="image (162).jpg">
+		<img src="image (163).jpg">
+		<img src="image (164).jpg">
+		<img src="image (165).jpg">
+		<img src="image (166).jpg">
+		<img src="image (167).jpg">
+		<img src="image (168).jpg">
+		<img src="image (169).jpg">
+		<img src="image (170).jpg">
+	</div>
+
+	
+	<div id="for_slide19" style="display: inline-block; overflow: hidden;">
+		<img src="image (171).jpg">
+		<img src="image (172).jpg">
+		<img src="image (173).jpg">
+		<img src="image (174).jpg">
+		<img src="image (175).jpg">
+		<img src="image (176).jpg">
+		<img src="image (177).jpg">
+		<img src="image (178).jpg">
+		<img src="image (179).jpg">
+		<img src="image (180).jpg">
+	</div>
+
+	
+	<div id="for_slide20" style="display: inline-block; overflow: hidden;">
+		<img src="image (181).jpg">
+		<img src="image (182).jpg">
+		<img src="image (183).jpg">
+		<img src="image (184).jpg">
+		<img src="image (185).jpg">
+		<img src="image (186).jpg">
+		<img src="image (187).jpg">
+		<img src="image (188).jpg">
+		<img src="image (189).jpg">
+		<img src="image (190).jpg">
+	</div>
+
+
+	<div id="for_slide21" style="display: inline-block; overflow: hidden;">
+		<img src="image (92).png">
+		<img src="image (111).png">
+		<img src="image (112).png">
+		<img src="image (113).png">
+		<img src="image (114).png">
+		<img src="image (115).png">
+		<img src="image (116).png">
+		<img src="image (117).png">
+		<img src="image (118).png">
+		<img src="image (119).png">
+	</div>
 	<footer style="width: 100%; height: 200px; text-align: center; background-color: black; opacity: 0.5; color: white; font-size: xx-large;">
 		Created by Mirzobakhtiyor Rahmatov.<span style="color: yellow;"> Mc.Duck & Altron </span>
 	</footer>
+
+	<div id="advertisment"  style="font-size: x-large;position: fixed; color: aqua; top: 0px; right: 20px;">
+	<ul style="list-style-type: none; font-size: normal;">
+		<li>
+			D<br>
+			i<br>
+			s<br>
+			n<br>
+			e<br>	
+			y<br>
+		</li>
+		<li>
+			I<br>
+			m<br>
+			a<br>
+			g<br>
+			e<br>
+			s<br>
+		</li>
+		<li>
+			A<br>
+			n<br>
+			i<br>
+			m<br>
+			a<br>
+			t<br>
+			i<br>
+			o<br>
+			n<br>
+		</li>
+		<li>		
+			M<br>
+			a<br>
+			k<br>
+			e<br>
+
+		</li>
+		
+		<li>
+			Y<br>
+			o<br>
+			u<br>
+			r<br>
+		</li>
+
+		<li>
+			D<br>
+			r<br>
+			e<br>
+			a<br>
+			m<br>
+		</li>
+
+		<li>
+			R<br>
+			e<br>
+			a<br>
+			l<br>
+		</li>
+
+		<li>
+			B<br>
+			y<br>
+			<br>
+			h<br>
+			a<br>
+			v<br>
+			i<br>
+			n<br>
+			g<br>
+		</li>
+
+		<li>
+			G<br>
+			o<br>
+			o<br>
+			d<br>
+			<br>
+			F<br>
+			e<br>
+			e<br>
+			l<br>
+			i<br>
+			n<br>
+			g<br>
+			s<br>
+		</li>
+	</ul>
+	</div>
+
+	<div id="advertisment2">
+	<ul>
+		<li>Animations</li>
+		<li>Pictures</li>
+		<li>Disney Images</li>
+		<li>Dreamful story pics</li>
+		<li>All in one</li>
+		<li>Just visit</li>
+	</ul>
+	</div>
 </body>
 </html>
