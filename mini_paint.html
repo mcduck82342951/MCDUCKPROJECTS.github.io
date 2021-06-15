@@ -1,0 +1,243 @@
+<!doctype html>
+<head>
+	<title>Mini painter</title>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="content-type" content="text/html,charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<script type="text/javascript">
+	    positionObject={
+		positionX: 320, 
+		positionY: 240
+	    }
+
+	    	    drawingTable={
+		allow: "false",
+		movePen: function(){
+			var context=drawingTable.context;
+			switch(drawingTable.direction){
+			    case "up": drawingTable.positionY-=1;break;
+			    case "down": drawingTable.positionY+=1;break;
+			    case "left": drawingTable.positionX-=1;break;
+			    case "right": drawingTable.positionX+=1;break;
+			}
+			
+			positionX=drawingTable.positionX;
+			positionY=drawingTable.positionY;
+			if(drawingTable.positionX<0){
+				positionX=640;
+				context.moveTo(positionX,positionY);
+			}else if(drawingTable.positionY>640){
+				positionY=0;
+				context.moveTo(positionX,positionY);
+			}
+
+			if(drawingTable.positionY<0){
+				positionY=480;
+				context.moveTo(positionX,positionY);
+			}else if(drawingTable.positionY>480){
+				positionY=0;
+				context.moveTo(positionX,positionY);
+			}
+
+			drawingTable.positionX=positionX;
+			drawingTable.positionY=positionY;
+			context.lineTo(drawingTable.positionX,drawingTable.positionY);
+			context.stroke();
+		},
+                run: function(){
+			alert("for the second time all is ok");
+			var canvas=document.getElementById("testcanvas5");
+			canvas.onclick=function(event){
+				var positionX=event.screenX;
+				var positionY=event.screenY;
+				drawingTable.positionX=640-(screen.availWidth-positionX);	
+				drawingTable.positionY=480-(screen.availHeight-positionY);
+			}
+			var context=canvas.getContext("2d");
+			this.context=context;
+			var start=document.getElementById("startButton");
+			start.onclick=function(){
+				if(drawingTable.allow=="false"){
+					drawingTable.allow="true";
+					drawingTable.runTimer=setInterval(drawingTable.movePen,10);
+					context.beginPath();
+				}
+			}
+			var stop=document.getElementById("stopButton");
+			stop.onclick=function(){
+				if(drawingTable.allow=="true"){
+					drawingTable.allow="false";
+					clearInterval(drawingTable.runTimer);
+					context.closePath();
+				}
+			}
+			var up=document.getElementById("upRun");
+			var down=document.getElementById("downRun");
+			var left=document.getElementById("leftRun");
+			var right=document.getElementById("rightRun");
+ 
+			up.onclick=function(){
+				drawingTable.direction="up";
+			}
+			down.onclick=function(){
+				drawingTable.direction="down";
+			} 
+			left.onclick=function(){
+				drawingTable.direction="left";
+			} 
+			right.onclick=function(){
+				drawingTable.direction="right";
+			}
+				
+		},
+		direction: "up",
+		positionX: 320,
+		positionY: 240,
+		runTimer: "",
+		context: "",
+	    }
+	   
+	    window.onload=function(){
+		alert("for the first time all is ok");
+		drawingTable.run();
+		var canvas=document.getElementById("testcanvas");
+		var context=canvas.getContext("2d");
+ 		context.beginPath();
+		context.moveTo(320,240);
+		var upButton=document.getElementById("upButton");
+		var downButton=document.getElementById("downButton");
+ 		var leftButton=document.getElementById("leftButton");
+		var rightButton=document.getElementById("rightButton");
+		upButton.onclick=function(){
+			draw(context,"up");
+		}
+
+		downButton.onclick=function(){
+			draw(context,"down");
+		}
+
+		leftButton.onclick=function(){
+			draw(context,"left");
+		}
+
+		rightButton.onclick=function(){	
+			draw(context,"right");
+		}
+
+		var canvas1=document.getElementById("testcanvas1");
+		var context1=canvas1.getContext("2d");
+		setInterval(function(){
+			var w=Math.floor(Math.random()*100);
+			var h=Math.floor(Math.random()*100);
+			var x=Math.floor(Math.random()*640);
+			var y=Math.floor(Math.random()*480);					
+			if(y+h>0){
+				y-=h;
+			}else if(y-h<0){
+				y+=h
+			}
+
+			if(x+w>0){
+				x-=w;
+			}else if(x-w<0){
+				x+=w
+			}
+
+			context1.strokeRect(x,y,w,h);
+		},3000);
+
+		var canvas2=document.getElementById("testcanvas2");
+		var context2=canvas2.getContext("2d");
+		setInterval(function(){
+			var x=Math.floor(Math.random()*540)+50;
+			var y=Math.floor(Math.random()*380)+50;
+			var r=Math.floor(Math.random()*50);
+			context2.beginPath();
+			context2.arc(x,y,r,0,2*Math.PI,true);
+			context2.stroke();
+			context2.closePath();
+		},3000);
+
+		var canvas3=document.getElementById("testcanvas3");
+		var context3=canvas3.getContext("2d");
+		context3.beginPath();
+		context3.moveTo(320,240);
+		setInterval(function(){
+		    var x=Math.floor(Math.random()*640);
+		    var y=Math.floor(Math.random()*480);
+		    context3.lineTo(x,y);
+		    context3.stroke();
+		},3000);
+
+		var canvas4=document.getElementById("testcanvas4");
+		var context4=canvas4.getContext("2d");
+		context4.beginPath();
+		setInterval(function(){
+			var x1=Math.floor(Math.random()*640);
+			var y1=Math.floor(Math.random()*480);
+			var x2=Math.floor(Math.random()*640);
+			var y2=Math.floor(Math.random()*480);
+			var x3=Math.floor(Math.random()*640);
+			var y3=Math.floor(Math.random()*480);
+
+			context4.moveTo(x1,y1);
+			context4.lineTo(x2,y2);
+			context4.lineTo(x3,y3);
+			context4.lineTo(x1,y1);
+			context4.stroke();
+		},3000);
+            }
+
+	    function draw(context,param){
+		var x=positionObject.positionX;
+		var y=positionObject.positionY;
+		switch(param){
+		   case "up": context.lineTo(x,y-1); y-=1;break;
+	           case "down": context.lineTo(x,y+1);y+=1;break;
+		   case "left": context.lineTo(x-1,y);x-=1;break;
+		   case "right":context.lineTo(x+1,y);x+=1;break;
+		} 		
+		context.stroke();
+		positionObject.positionX=x;
+		positionObject.positionY=y;
+	    }
+
+
+	</script>
+	<style>
+		body{
+		   text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="testcanvas1" style="border: 1px solid black;" width="640px" height="480px">Sorry,but your browser doesn't support canvas.</canvas>
+	<canvas id="testcanvas2" style="border: 1px solid black;" width="640px" height="480px">Sorry,but your browser doesn't support canvas.</canvas>
+	<canvas id="testcanvas3" style="border: 1px solid black;" width="640px" height="480px">Sorry,but your browser doesn't support canvas.</canvas>
+	<canvas id="testcanvas4" style="border: 1px solid black;" width="640px" height="480px">Sorry,but your browser doesn't support canvas.</canvas>
+	<div style="display: inline-block;width: 640px;">
+	<canvas id="testcanvas" style="border: 1px solid black;" width="640px" height="480px">Sorry, but your browser doesn't support canvas. Please update your browser</canvas>
+	<fieldset>
+		<form>
+			<input type="button"  style="font-size: xx-large;" value="up" id="upButton"/>
+			<input type="button"  style="font-size: xx-large;" value="down" id="downButton">
+			<input type="button"  style="font-size: xx-large;" value="left" id="leftButton">
+			<input type="button"  style="font-size: xx-large;" value="right" id="rightButton">
+		</form>
+	</fieldset>
+	</div>
+	<div style="width: 640px; display: inline-block;">
+	<canvas id="testcanvas5" style="border: 1px solid black;" width="640px" height="480px">Sorry,but your browser doesn't support canvas.</canvas>
+	<fieldset>
+	       <form>
+			<input type="button" style="font-size: xx-large;" value="start" id="startButton"/>
+			<input type="button" style="font-size: xx-large;" value="W" id="upRun"/>
+			<input type="button" style="font-size: xx-large;" value="stop" id="stopButton"/><br>
+			<input type="button" style="font-size: xx-large;" value="A" id="leftRun"/>
+			<input type="button" style="font-size: xx-large;" value="S" id="downRun"/>
+			<input type="button" style="font-size: xx-large;" value="D" id="rightRun"/>
+	       </form>
+	</fieldset>
+	</div>
+</body>
+</html>
